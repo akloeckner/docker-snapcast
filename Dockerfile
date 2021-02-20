@@ -14,7 +14,7 @@ RUN apt-get update \
 
 FROM alpine:edge
 
-RUN apk add -U avahi-libs flac libvorbis alsa-lib soxr pulseaudio opus
+RUN apk add -U avahi-libs flac libvorbis alsa-lib soxr pulseaudio opus libc6-compat
 COPY --from=builder /root/snapcast/server/snapserver /root/snapcast/client/snapclient /usr/local/bin/
 
 WORKDIR /data
